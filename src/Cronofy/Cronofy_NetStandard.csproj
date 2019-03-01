@@ -46,7 +46,7 @@
         </AssemblyAttribute>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="11.*" />
+        <PackageReference Include="Newtonsoft.Json" Version="10.*" />
         <!--
       <PackageReference Include="StyleCopPlus.MSBuild" Version="4.7.49.5">
           <PrivateAssets>all</PrivateAssets>
