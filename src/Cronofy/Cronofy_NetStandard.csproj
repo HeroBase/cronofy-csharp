@@ -1,7 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{43F5E20B-AC85-448D-A218-51B9CD248A83}</ProjectGuid>
         <OutputType>Library</OutputType>
         <RootNamespace>Cronofy</RootNamespace>
@@ -12,47 +10,13 @@
         <AssemblyCopyright>Cronofy</AssemblyCopyright>
         <AssemblyVersion>1.0.0</AssemblyVersion>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <UseMSBuildEngine>False</UseMSBuildEngine>
-        <StyleCopTreatErrorsAsWarnings>False</StyleCopTreatErrorsAsWarnings>
-        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>..\..\build\Cronofy\bin\Debug</OutputPath>
-        <DefineConstants>DEBUG;</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <ConsolePause>false</ConsolePause>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <DocumentationFile>..\..\build\Cronofy\bin\Debug\Cronofy.xml</DocumentationFile>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <Optimize>true</Optimize>
-        <OutputPath>..\..\build\Cronofy\bin\Release</OutputPath>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <ConsolePause>false</ConsolePause>
-        <DocumentationFile>..\..\build\Cronofy\bin\Release\Cronofy.xml</DocumentationFile>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    </PropertyGroup>
-
-
     <ItemGroup>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
             <_Parameter1>Cronofy.Test</_Parameter1>
         </AssemblyAttribute>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="10.*" />
-        <!--
-      <PackageReference Include="StyleCopPlus.MSBuild" Version="4.7.49.5">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-      </PackageReference>
-      -->
+      <PackageReference Include="Newtonsoft.Json" version="$([MSBuild]::ValueOrDefault($(NugetV_NewtonsoftJson), `12.0.3`))" />
     </ItemGroup>
-
 </Project>
